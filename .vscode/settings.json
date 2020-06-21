@@ -1,5 +1,7 @@
 {
   "java.configuration.updateBuildConfiguration": "automatic",
+  "java.format.settings.url": "https://raw.githubusercontent.com/google/styleguide/gh-pages/eclipse-java-google-style.xml",
+  "java.format.settings.profile": "GoogleStyle",
   "files.exclude": {
     "**/.git": true,
     "**/.svn": true,
@@ -10,7 +12,6 @@
     "**/.classpath": true,
     "**/.project": true,
     "**/.settings": true,
-    "**/.factorypath": true,
-    "**/*~": true
+    "**/.factorypath": true
   }
 }
