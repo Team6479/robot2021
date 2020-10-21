@@ -9,4 +9,10 @@ package frc.robot;
  * constants are needed, to reduce verbosity.
  */
 public final class Constants {
+  public final class DriveTrainConstants {
+    public static final int LEFT_FRONT_MOTOR_PORT = 0;
+    public static final int LEFT_BACK_MOTOR_PORT = 1;
+    public static final int RIGHT_FRONT_MOTOR_PORT = 2;
+    public static final int RIGHT_BACK_MOTOR_PORT = 3;
+  }
 }

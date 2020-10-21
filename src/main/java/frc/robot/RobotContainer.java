@@ -1,7 +1,11 @@
 package frc.robot;
 
+import com.team6479.lib.commands.TeleopTankDrive;
+import com.team6479.lib.controllers.CBXboxController;
 import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.XboxController;
+import edu.wpi.first.wpilibj.GenericHID.Hand;
+import frc.robot.subsystems.Drivetrain;
 
 /**
  * This class is where the bulk of the robot should be declared.  Since Command-based is a
@@ -13,6 +17,10 @@ public class RobotContainer {
   /**
    * The container for the robot.  Contains subsystems, OI devices, and commands.
    */
+
+  private final Drivetrain drivetrain = new Drivetrain();
+  private final CBXboxController xbox = new CBXboxController(0);
+
   public RobotContainer() {
     configureButtonBindings();
   }
@@ -24,5 +32,6 @@ public class RobotContainer {
    * {@link edu.wpi.first.wpilibj2.command.button.JoystickButton}.
    */
   private void configureButtonBindings() {
+    drivetrain.setDefaultCommand(new TeleopTankDrive(drivetrain, () -> xbox.getY(Hand.kLeft), () -> xbox.getX(Hand.kRight)));
   }
 }
