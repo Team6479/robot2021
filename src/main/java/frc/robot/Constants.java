@@ -10,7 +10,7 @@ package frc.robot;
  */
 public final class Constants {
 
-  public static final int INDERER_ROLLER = 5; //Change Later Assuming Port #
+  public static final int INDEXER_ROLLER = 5; //Change Later Assuming Port #
 
 }
 

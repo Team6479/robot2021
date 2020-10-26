@@ -16,7 +16,6 @@ public class RobotContainer {
    */
   public RobotContainer() {
 
-    public final Indexer  = new Indexer(); //I think that the error is that this "indexer" isn't used yet but I'm not sure
 
     configureButtonBindings();
   }

@@ -1,12 +1,19 @@
-public class Indexer extends Subsystembase {
+package frc.robot.Subsystems;
+
+import com.ctre.phoenix.motorcontrol.ControlMode;
+import com.ctre.phoenix.motorcontrol.can.TalonSRX;
+import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import frc.robot.Constants;
+
+public class Indexer extends SubsystemBase {
 
   private TalonSRX indexer1;
  //Creates an On and Off Boolean
-  private Boolen on;
+  private boolean on;
 
   //Creates Indexer Object and Sets Default Parameters
   public Indexer() {
-      indexer1 = new TalonSRX(Constants.INDERER_ROLLER);
+      indexer1 = new TalonSRX(Constants.INDEXER_ROLLER);
       //I don't know why my Indexer isn't changing to blue!!!
       indexer1.configFactoryDefault();
       indexer1.setInverted(false);
