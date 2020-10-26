@@ -2,6 +2,7 @@ package frc.robot;
 
 import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.XboxController;
+import frc.robot.Subsystems.Indexer;
 
 /**
  * This class is where the bulk of the robot should be declared.  Since Command-based is a
@@ -14,6 +15,9 @@ public class RobotContainer {
    * The container for the robot.  Contains subsystems, OI devices, and commands.
    */
   public RobotContainer() {
+
+    public final Indexer  = new Indexer(); //I think that the error is that this "indexer" isn't used yet but I'm not sure
+
     configureButtonBindings();
   }
 
