@@ -9,4 +9,16 @@ package frc.robot;
  * constants are needed, to reduce verbosity.
  */
 public final class Constants {
+
+  public static final int COMPRESSOR_PORT = 0;
+
+  public final class IntakeConstants {
+    public static final int DOUBLE_SOLENOID_LEFT_0 = 0;
+    public static final int DOUBLE_SOLENOID_LEFT_1 = 1;
+
+    public static final int DOUBLE_SOLENOID_RIGHT_0= 0;
+    public static final int DOUBLE_SOLENOID_RIGHT_1 = 1;
+
+    public static final int INTAKE_ROLLERS = 0;
+  }
 }

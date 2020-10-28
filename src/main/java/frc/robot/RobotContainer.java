@@ -1,7 +1,12 @@
 package frc.robot;
 
+import com.team6479.lib.controllers.CBXboxController;
+import edu.wpi.first.wpilibj.Compressor;
 import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.XboxController;
+import edu.wpi.first.wpilibj.XboxController.Button;
+import edu.wpi.first.wpilibj2.command.InstantCommand;
+import frc.robot.subsystems.Intake;
 
 /**
  * This class is where the bulk of the robot should be declared.  Since Command-based is a
@@ -10,6 +15,12 @@ import edu.wpi.first.wpilibj.XboxController;
  * (including subsystems, commands, and button mappings) should be declared here.
  */
 public class RobotContainer {
+
+  public final Intake intake = new Intake();
+
+  public static Compressor compressor = new Compressor(Constants.COMPRESSOR_PORT);
+
+  public final CBXboxController xbox = new CBXboxController(0);
   /**
    * The container for the robot.  Contains subsystems, OI devices, and commands.
    */
@@ -24,5 +35,11 @@ public class RobotContainer {
    * {@link edu.wpi.first.wpilibj2.command.button.JoystickButton}.
    */
   private void configureButtonBindings() {
+
+    xbox.getButton(Button.kA)
+      .whenPressed(new InstantCommand(intake::toggleArms, intake));
+    xbox.getButton(Button.kB)
+      .whenPressed(new InstantCommand(intake::toggleRollers, intake));
+
   }
 }
