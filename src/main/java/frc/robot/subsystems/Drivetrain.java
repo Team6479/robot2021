@@ -42,7 +42,7 @@ public class Drivetrain extends SubsystemBase implements TankDrive {
     leftFrontMotor.setInverted(false);
     leftBackMotor.setInverted(false);
     rightFrontMotor.setInverted(true);
-    rightFrontMotor.setInverted(true);
+    rightBackMotor.setInverted(true);
   }
 
   @Override
