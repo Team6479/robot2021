@@ -18,7 +18,7 @@ public class RobotContainer {
 
   public final Intake intake = new Intake();
 
-  public static Compressor compressor = new Compressor(Constants.COMPRESSOR_PORT);
+  public final Compressor compressor = new Compressor(Constants.COMPRESSOR_PORT);
 
   public final CBXboxController xbox = new CBXboxController(0);
   /**
