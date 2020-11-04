@@ -9,7 +9,7 @@ import frc.robot.Constants;
 
 public class Flywheels extends SubsystemBase{
 
-   private CANSparkMax smallFlywheel1;
+   private CANSparkMax smallFlywheel1;  //Creates Object
    private CANSparkMax smallFlywheel2;  //Creates Object
    private TalonFX bigFlywheelMotor1;   //Creates Object
    private TalonFX bigFlywheelMotor2;   //Creates Object
@@ -17,9 +17,9 @@ public class Flywheels extends SubsystemBase{
    public Flywheels() {
 
     smallFlywheel1 = new CANSparkMax(Constants.SPARK_MAX_1, MotorType.kBrushless);
-    smallFlywheel2 = new CANSparkMax(Constants.SPARK_MAX_2, MotorType.kBrushless); //I'm not sure what motor type you want me to use
+    smallFlywheel2 = new CANSparkMax(Constants.SPARK_MAX_2, MotorType.kBrushless);
 
-    smallFlywheel1.restoreFactoryDefaults();
+    smallFlywheel1.restoreFactoryDefaults();  //Sets Factory Default
     smallFlywheel2.restoreFactoryDefaults();  //Sets Factory Default
 
     smallFlywheel1.setInverted(false);
@@ -34,8 +34,8 @@ public class Flywheels extends SubsystemBase{
     bigFlywheelMotor1.setInverted(false); //I Though you said something about if there are 2 wheels, one is inverted always
     bigFlywheelMotor2.setInverted(true);  //I Though you said something about if there are 2 wheels, one is inverted always
 
-    smallFlywheel2.follow(smallFlywheel1);
-    bigFlywheelMotor2.follow(bigFlywheelMotor1);
+    smallFlywheel2.follow(smallFlywheel1); //Follow the same actions of a motor
+    bigFlywheelMotor2.follow(bigFlywheelMotor1); //Follow the same actions of a motor
    }
 
    public void bigFlywheelRoationForward() {
