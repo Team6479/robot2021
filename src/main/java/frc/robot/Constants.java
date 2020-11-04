@@ -9,4 +9,9 @@ package frc.robot;
  * constants are needed, to reduce verbosity.
  */
 public final class Constants {
+
+  public static final int SPARK_MAX_1 = 5; //Change Due to Port Number
+  public static final int SPARK_MAX_2 = 6; //Change Due to Port Number
+  public static final int FALCON_MOTOR_1 = 1; //Change Due to Port Number
+  public static final int FALCON_MOTOR_2 = 2; //Change Due to Port Number
 }
