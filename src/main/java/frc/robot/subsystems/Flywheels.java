@@ -23,7 +23,7 @@ public class Flywheels extends SubsystemBase{
     smallFlywheel2.restoreFactoryDefaults();  //Sets Factory Default
 
     smallFlywheel1.setInverted(false);
-    smallFlywheel1.setInverted(true); //Not inverted
+    smallFlywheel2.setInverted(true); //Not inverted
 
     bigFlywheelMotor1 = new TalonFX(Constants.FALCON_MOTOR_1); //Initializes Object
     bigFlywheelMotor2 = new TalonFX(Constants.FALCON_MOTOR_2); //Initializes Object
