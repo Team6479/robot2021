@@ -10,8 +10,6 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants.DriveTrainConstants;
 
 public class Drivetrain extends SubsystemBase implements TankDrive {
-  private final int CPR = 4096;
-  private final double WHEEL_CIRCUMFERENCE = Math.PI * 5; //TODO: Insert actual wheel diameter
   private final TalonSRX leftFrontMotor = new TalonSRX(DriveTrainConstants.LEFT_FRONT_MOTOR_PORT);
   private final TalonSRX leftBackMotor = new TalonSRX(DriveTrainConstants.LEFT_BACK_MOTOR_PORT);
   private final TalonSRX rightFrontMotor = new TalonSRX(DriveTrainConstants.RIGHT_FRONT_MOTOR_PORT);
@@ -63,8 +61,15 @@ public class Drivetrain extends SubsystemBase implements TankDrive {
     rightFrontMotor.set(ControlMode.PercentOutput, forward, DemandType.ArbitraryFeedForward, -rotation);
   }
 
-  public void straightDrive(double distance) {
-    leftFrontMotor.set(ControlMode.Position, CPR * distance / WHEEL_CIRCUMFERENCE);
-    rightFrontMotor.set(ControlMode.Position, CPR * distance / WHEEL_CIRCUMFERENCE);
+  public double getPosition() {
+    double leftSide = leftFrontMotor.getSelectedSensorPosition();
+    double rightSide = rightFrontMotor.getSelectedSensorPosition();
+
+    return (leftSide + rightSide) / 2;
+  }
+
+  public void resetEncoders() {
+    leftFrontMotor.setSelectedSensorPosition(0, 0 ,20);
+    rightFrontMotor.setSelectedSensorPosition(0, 0 ,20);
   }
 }
