@@ -14,4 +14,8 @@ public final class Constants {
   public static final int SPARK_MAX_2 = 6; //Change Due to Port Number
   public static final int FALCON_MOTOR_1 = 1; //Change Due to Port Number
   public static final int FALCON_MOTOR_2 = 2; //Change Due to Port Number
+
+  public static final int COLORWHEEL_SPARK_MAX = 20; //Change Due to Port Number
+  public static final int COLORWHEEL_SOL_1 = 21; //Change Due to Port Number
+  public static final int COLORWHEEL_SOL_2 = 22; //Change Due to Port Number
 }
