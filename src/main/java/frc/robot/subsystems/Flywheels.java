@@ -16,8 +16,8 @@ public class Flywheels extends SubsystemBase{
 
    public Flywheels() {
 
-    smallFlywheel1 = new CANSparkMax(Constants.SPARK_MAX_1, MotorType.kBrushless);
-    smallFlywheel2 = new CANSparkMax(Constants.SPARK_MAX_2, MotorType.kBrushless);
+    smallFlywheel1 = new CANSparkMax(Constants.FlywheelConstants.SPARK_MAX_1, MotorType.kBrushless);
+    smallFlywheel2 = new CANSparkMax(Constants.FlywheelConstants.SPARK_MAX_2, MotorType.kBrushless);
 
     smallFlywheel1.restoreFactoryDefaults();  //Sets Factory Default
     smallFlywheel2.restoreFactoryDefaults();  //Sets Factory Default
@@ -25,8 +25,8 @@ public class Flywheels extends SubsystemBase{
     smallFlywheel1.setInverted(false);
     smallFlywheel2.setInverted(true); //Not inverted
 
-    bigFlywheelMotor1 = new TalonFX(Constants.FALCON_MOTOR_1); //Initializes Object
-    bigFlywheelMotor2 = new TalonFX(Constants.FALCON_MOTOR_2); //Initializes Object
+    bigFlywheelMotor1 = new TalonFX(Constants.FlywheelConstants.FALCON_MOTOR_1); //Initializes Object
+    bigFlywheelMotor2 = new TalonFX(Constants.FlywheelConstants.FALCON_MOTOR_2); //Initializes Object
 
     bigFlywheelMotor1.configFactoryDefault(); //Sets Factory Default
     bigFlywheelMotor2.configFactoryDefault(); //Sets Factory Default
