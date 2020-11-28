@@ -10,41 +10,41 @@ import frc.robot.Constants;
 
 public class Colorwheel extends SubsystemBase {
 
-  private CANSparkMax colorwheelRotator; //Creates Motor
-  private DoubleSolenoid colorwheelSol; //Creates Motor
+  private CANSparkMax colorwheelRotator;
+  private DoubleSolenoid colorwheelSol;
 
   public Colorwheel() {
 
-    colorwheelRotator = new CANSparkMax(Constants.COLORWHEEL_SPARK_MAX, MotorType.kBrushless); //Defines Object
+    colorwheelRotator = new CANSparkMax(Constants.ColorwheelConstants.COLORWHEEL_SPARK_MAX, MotorType.kBrushless);
 
-    colorwheelRotator.restoreFactoryDefaults(); //Restores Factory Defaults
+    colorwheelRotator.restoreFactoryDefaults();
 
     colorwheelRotator.setInverted(false); //Not Inverted
 
-    colorwheelSol = new DoubleSolenoid(Constants.COLORWHEEL_SOL_1, Constants.COLORWHEEL_SOL_2); //Defines Object
+    colorwheelSol = new DoubleSolenoid(Constants.ColorwheelConstants.COLORWHEEL_SOL_1, Constants.ColorwheelConstants.COLORWHEEL_SOL_2);
     /*
     *Are there no defaults or inverteds that I have to set for the double solenoid. I looked back into my old code, and didn't see it, but I could be wrong.
     */
   }
 
-  public void ColorwheelExtends() {
-    colorwheelSol.set(DoubleSolenoid.Value.kForward); //The Wheel Extends Forward
+  public void extendColorwheel() {
+    colorwheelSol.set(DoubleSolenoid.Value.kForward);
   }
 
-  public void ColorwheelRetracts() {
-    colorwheelSol.set(DoubleSolenoid.Value.kReverse); //The Wheel Retracts
+  public void retractColorwheel() {
+    colorwheelSol.set(DoubleSolenoid.Value.kReverse);
   }
 
-  public void ColorwheelForward() {
-    colorwheelRotator.set(0.5); //The Wheel Rotates Forwards
+  public void forwardColorwheel() {
+    colorwheelRotator.set(0.5);
   }
 
-  public void ColorwheelBackwards() {
-    colorwheelRotator.set(-0.5); //The Wheel Rotates Backwards
+  public void backwardsColorwheel() {
+    colorwheelRotator.set(-0.5);
   }
 
-  public void ColorwheelOff() {
-    colorwheelRotator.set(0); //The Wheel is Off
+  public void colorwheelOff() {
+    colorwheelRotator.set(0);
   }
 
 
