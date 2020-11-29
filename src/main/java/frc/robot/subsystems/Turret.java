@@ -5,14 +5,18 @@ import com.ctre.phoenix.motorcontrol.FeedbackDevice;
 import com.ctre.phoenix.motorcontrol.NeutralMode;
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 import frc.robot.Constants.TurretConstants;
+import frc.robot.util.Sigmoid;
 
 public class Turret {
 
   int upperLimit;
   int lowerLimit;
 
-  private final TalonSRX motor = new TalonSRX(TurretConstants.MOTOR);
+  private final double ENCODER_UNITS = 4095; //represents the number of encoder units in one rotation
+  private final double UNITS_PER_DEGREE = ENCODER_UNITS / 360;
 
+  private final TalonSRX motor = new TalonSRX(TurretConstants.MOTOR);
+  private final Sigmoid sigmoid = new Sigmoid(0.0, 0.0, 0.0, false, 0.0, 0.0);
 
   public Turret(){
 
@@ -25,8 +29,13 @@ public class Turret {
 
   }
 
-  public void start(){
-    motor.set(ControlMode.PercentOutput, 0.5);
+  public void setPosition(double angle){
+    angle %= 360;
+    motor.set(ControlMode.Position, angle * UNITS_PER_DEGREE);
+  }
+
+  public void setSpeed(double speed){
+    //do sigmoid stuff that we don't understand
   }
 
   public void stop(){
